@@ -1,9 +1,9 @@
 import sys
 while True:
-	str=input("请输入三个数,按q退出").strip()
-	if str=='q':
+	text=input("请输入三个数,按q退出").strip()
+	if text=='q':
 		break
-	strs=str.replace(","," ").split()
+	strs=text.replace(","," ").split()
 	
 	if len(strs) !=3:
 		print("请输入三个数")

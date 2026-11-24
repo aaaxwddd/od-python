@@ -13,8 +13,8 @@ print(f'f=int("3")+1,{f}')
 print(f'g=str(3)+"1",{g}')
 print(f==g)
 
-str=input("请输入文本")
-print("文本类型:",type(str))
+text=input("请输入文本")
+print("文本类型:",type(text))
 h=1.23456789
 print(f"h={h},保留两位小数：{h:.2f}")
 print("for in range(1,6) \n range的三种写法:range(stop),range(start,stop),range(start,stop,step) 左闭右开，step为步长,i为变量名,for还可以用于遍历字符串、列表")

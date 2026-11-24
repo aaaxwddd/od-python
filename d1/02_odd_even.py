@@ -9,9 +9,10 @@ while True:
 	try:
 		x=float(s)
 		y=int(s)
+
+		if not x==y:
+			t=False
 	except ValueError:
-		t=False
-	if not x==y:
 		t=False
 	if t==False:
 		print("请输入整数")
