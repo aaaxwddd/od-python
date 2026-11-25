@@ -2,9 +2,9 @@
 text=input("请输入数据")
 s=text.strip().replace(","," ").split()
 m=[]
-for i in range(1,len(s)):
-	if s[i-1] not in m:
-		m.append(s[i-1])
+for i in range(0,len(s)):
+	if s[i] not in m:
+		m.append(s[i])
 
 n={x for x in s}
 print(m)

@@ -2,10 +2,14 @@
 text=input("请输入数据")
 s=text.strip().replace(","," ").split()
 s.sort()
-print(s[-1])
-print(s[-2])
+try:
+    s1=[float(x) for x in s]
+except ValueError:
+    print("请正确输入")
+print(s1[-1])
+print(s1[-2])
 
 s.sort(reverse=True)
-print(s[0])
-print(s[1])
+print(s1[0])
+print(s1[1])
 

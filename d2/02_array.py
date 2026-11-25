@@ -1,6 +1,6 @@
 #及格率
 text=input("请输入分数")
-s=text.strip().replace(",","").split()
+s=text.strip().replace(","," ").split()
 counts=0
 try:
 	for i in range(0,len(s)):
