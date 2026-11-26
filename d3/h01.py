@@ -18,7 +18,7 @@ print(ans)
 #两数之和封装版
 def two_sum(nums,target):
     m={}
-    for i,x in enmumerate(nums):
+    for i,x in enumerate(nums):
         need=target-x
         if need in m:
             return([m[need],i])
