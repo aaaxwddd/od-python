@@ -1,47 +1,25 @@
 #最长连续序列
-
-#验证错误，待修正
-
 text=input("请输入你的数据")
-s=text.strip().replace(","," ").split()
-m={}
-n=set(s)
-nums=[]
-for i in s:
-    if i not in nums:
-        nums.append(i)
+nums=list(map(int,text.strip().replace(","," ").split()))
 
-nums=sorted(set(nums))
+if not nums:
+    print("0 ()")
+else:
+    s=set(nums)
+    best_len=0
+    best_start=0
 
-a=[int(x) for x in nums]
-count=0
-for i in range(0,len(a)-1):
-    if a[i]+1==a[i+1]:
-        count+=1
-    else:
-        break
-m[a[0]]=count
+    for x in s:
+        if x-1 not in s:
+            cur=x
+            length=1
+            while cur+1 in s:
+                cur+=1
+                length+=1
+            if length>best_len:
+                best_len=length
+                best_start=x
 
-
-for i in range(1,len(a)):
-#    if a[i]-1!=a[i-1]:
-     if i!=0:
-        for j in range(i,len(a)-1):
-            if a[j]+1==a[j+1]:
-                m[a[i]]=m.get(a[i],0)+1
-            else:
-                break
-"""    if a[i]==a[i-1]+1:
-        m[a[i]]=m[a[i-1]]-1
-"""
-(w,z)=max(m.items(),key=lambda x:x[1])
-o=0
-for i,x in enumerate(a):
-    if x==w:
-        o=i
-t=[]
-for i in range(0,z):
-    t.append(a[o]+i)
-print(f"{z} ({','.join(map(str,t))})")
-
+    seq=list(range(best_start,best_start+best_len))
+    print(f"{best_len}({','.join(map(str,seq))})")
 
