@@ -1,7 +1,6 @@
 def max_next_max(nums):
     #最大和次大
-    nums.sort()
-    s1=[int(x) for x in nums]
+    s1=[int(x) for x in sorted(nums)]
     return (s1[-1],s1[-2])
 
 def two_sum(nums,target):

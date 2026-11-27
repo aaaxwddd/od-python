@@ -9,7 +9,7 @@ def count(words):
     return s1
 
 def top_k(d,k=5):
-    return(sorted(d.items(),key=lambda x:x[1],reverse=True)[:5])
+    return(sorted(d.items(),key=lambda x:x[1],reverse=True)[:k])
 
 def main():
     for w,c in top_k(count(tokenize(input("请输入文本")))):
